@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+       
+<h:head>
+        <title>JSF 2.0 Say Hello</title>
+</h:head>
+    <h:body>
+        <h:form>  
+			<h:outputLabel for="name">User Name</h:outputLabel>  
+			<h:inputText id="sname" value="#{studentManagedBean.name}" required="true" /><br/>  
+			
+			<h:outputLabel for="country">Country</h:outputLabel>  
+			<h:selectOneMenu value="#{studentManagedBean.country}">
+                <f:selectItems value="#{studentManagedBean.getCountries()}"></f:selectItems>
+            </h:selectOneMenu><br></br>
+           
+           <!--   #{studentManagedBean.display()} -->
+                       
+			<h:commandButton id="submit-button" value="Submit" action="#{studentManagedBean.display()}"/>  
+		</h:form>  
+		
+		<h2>Hello, <h:outputText value="#{studentManagedBean.name}"></h:outputText></h2>
+		<h2>Country, <h:outputText value="#{studentManagedBean.country}"></h:outputText></h2>  
+    </h:body>
+</html>
